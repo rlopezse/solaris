@@ -1,22 +1,24 @@
-import express from 'express';
-import { env } from './config/env';
-import productRoutes from './routes/product.routes';
-import userRoutes from './routes/user.routes';
+import express from 'express'
+import { env } from './config/env'
+import productRoutes from './routes/product.routes'
+import userRoutes from './routes/user.routes'
 
-const app = express();
+const app = express()
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Middlewares
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-app.use('/api/products', productRoutes);
-app.use('/api/users', userRoutes);
+// Routes
+app.use('/api/products', productRoutes)
+app.use('/api/users', userRoutes)
 
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
+  res.json({ status: 'ok', timestamp: new Date().toISOString() })
+})
 
 app.listen(env.port, () => {
-  console.log(`🚀 Server running on port ${env.port}`);
-});
+  console.log(`🚀 Server running on port ${env.port}`)
+})
 
-export default app;
+export default app
