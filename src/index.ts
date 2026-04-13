@@ -2,6 +2,7 @@ import express from 'express'
 import { env } from './config/env'
 import productRoutes from './routes/product.routes'
 import userRoutes from './routes/user.routes'
+import './config/zod';
 
 const app = express()
 
