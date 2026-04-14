@@ -1,5 +1,6 @@
 import './config/zod';
 import express from 'express';
+import helmet from 'helmet';
 import { env } from './config/env';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swagger';
@@ -13,9 +14,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Security
+app.use(helmet());
 
 // Swagger
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api/docs', 
+  helmet({ contentSecurityPolicy: false }),
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerSpec)
+);
 
 // Public routes
 app.use('/api/auth', authRoutes);
