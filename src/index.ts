@@ -8,14 +8,19 @@ import authRoutes from './routes/auth.routes';
 import productRoutes from './routes/product.routes';
 import userRoutes from './routes/user.routes';
 import { authenticate } from './middlewares/auth.middleware';
+import compression from 'compression';
+import { globalLimiter, authLimiter } from './middlewares/rate-limit.middleware';
 
 const app = express();
+
+app.use(globalLimiter);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Security
 app.use(helmet());
+app.use(compression());
 
 // Swagger
 app.use('/api/docs', 
@@ -25,7 +30,7 @@ app.use('/api/docs',
 );
 
 // Public routes
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authLimiter, authRoutes);
 
 // Health check
 app.get('/health', (_req, res) => {
