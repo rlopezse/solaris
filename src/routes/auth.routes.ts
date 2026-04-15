@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import { authController } from '../controllers/auth.controller';
-import { validate } from '../middlewares/validate.middleware';
-import { registerSchema, loginSchema } from '../schemas/auth.schema';
+import { Router } from 'express'
+import { authController } from '../controllers/auth.controller'
+import { validate } from '../middlewares/validate.middleware'
+import { registerSchema, loginSchema } from '../schemas/auth.schema'
 
-const router = Router();
+const router = Router()
 
 /**
  * @swagger
@@ -32,7 +32,7 @@ const router = Router();
  *       409:
  *         description: Email ya en uso
  */
-router.post('/register', validate(registerSchema), authController.register);
+router.post('/register', validate(registerSchema), authController.register)
 
 /**
  * @swagger
@@ -60,6 +60,6 @@ router.post('/register', validate(registerSchema), authController.register);
  *         description: Credenciales inválidas
  */
 
-router.post('/login', validate(loginSchema), authController.login);
+router.post('/login', validate(loginSchema), authController.login)
 
-export default router;
+export default router

@@ -1,9 +1,12 @@
-import { Router } from 'express';
-import { productController } from '../controllers/product.controller';
-import { validate } from '../middlewares/validate.middleware';
-import { createProductSchema, updateProductSchema } from '../schemas/product.schema';
+import { Router } from 'express'
+import { productController } from '../controllers/product.controller'
+import { validate } from '../middlewares/validate.middleware'
+import {
+  createProductSchema,
+  updateProductSchema,
+} from '../schemas/product.schema'
 
-const router = Router();
+const router = Router()
 
 /**
  * @swagger
@@ -19,7 +22,7 @@ const router = Router();
  *       401:
  *         description: No autorizado
  */
-router.get('/', productController.getAll);
+router.get('/', productController.getAll)
 
 /**
  * @swagger
@@ -41,7 +44,7 @@ router.get('/', productController.getAll);
  *       404:
  *         description: Producto no encontrado
  */
-router.get('/:id', productController.getById);
+router.get('/:id', productController.getById)
 
 /**
  * @swagger
@@ -85,7 +88,7 @@ router.get('/:id', productController.getById);
  *       400:
  *         description: Error de validación
  */
-router.post('/', validate(createProductSchema), productController.create);
+router.post('/', validate(createProductSchema), productController.create)
 
 /**
  * @swagger
@@ -118,7 +121,7 @@ router.post('/', validate(createProductSchema), productController.create);
  *       404:
  *         description: Producto no encontrado
  */
-router.put('/:id', validate(updateProductSchema), productController.update);
+router.put('/:id', validate(updateProductSchema), productController.update)
 
 /**
  * @swagger
@@ -140,6 +143,6 @@ router.put('/:id', validate(updateProductSchema), productController.update);
  *       404:
  *         description: Producto no encontrado
  */
-router.delete('/:id', productController.delete);
+router.delete('/:id', productController.delete)
 
-export default router;
+export default router

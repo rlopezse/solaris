@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import { userController } from '../controllers/user.controller';
-import { validate } from '../middlewares/validate.middleware';
-import { createUserSchema, updateUserSchema } from '../schemas/user.schema';
+import { Router } from 'express'
+import { userController } from '../controllers/user.controller'
+import { validate } from '../middlewares/validate.middleware'
+import { createUserSchema, updateUserSchema } from '../schemas/user.schema'
 
-const router = Router();
+const router = Router()
 
 /**
  * @swagger
@@ -19,7 +19,7 @@ const router = Router();
  *       401:
  *         description: No autorizado
  */
-router.get('/', userController.getAll);
+router.get('/', userController.getAll)
 
 /**
  * @swagger
@@ -41,7 +41,7 @@ router.get('/', userController.getAll);
  *       404:
  *         description: Usuario no encontrado
  */
-router.get('/:id', userController.getById);
+router.get('/:id', userController.getById)
 
 /**
  * @swagger
@@ -71,7 +71,7 @@ router.get('/:id', userController.getById);
  *       409:
  *         description: Email ya en uso
  */
-router.post('/', validate(createUserSchema), userController.create);
+router.post('/', validate(createUserSchema), userController.create)
 
 /**
  * @swagger
@@ -102,7 +102,7 @@ router.post('/', validate(createUserSchema), userController.create);
  *       200:
  *         description: Usuario actualizado
  */
-router.put('/:id', validate(updateUserSchema), userController.update);
+router.put('/:id', validate(updateUserSchema), userController.update)
 
 /**
  * @swagger
@@ -122,6 +122,6 @@ router.put('/:id', validate(updateUserSchema), userController.update);
  *       204:
  *         description: Usuario eliminado
  */
-router.delete('/:id', userController.delete);
+router.delete('/:id', userController.delete)
 
-export default router;
+export default router
