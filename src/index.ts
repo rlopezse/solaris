@@ -33,6 +33,11 @@ app.use(
 // Public routes
 app.use('/api/auth', authLimiter, authRoutes)
 
+// Greeting route
+app.get('/health', (_req, res) => {
+  res.json({ status: 'Qué bueno verte por acá!' })
+})
+
 // Health check
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
