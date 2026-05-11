@@ -1,7 +1,7 @@
 import redis from '../config/redis'
 import { productRepository } from '../repositories/product.repository'
 
-const CACHE_TTL = 60 * 60
+const CACHE_TTL = 60 * 60 * 24 * 7
 
 const CACHE_KEYS = {
   allProducts: 'products:all',
