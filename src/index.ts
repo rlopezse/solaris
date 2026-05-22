@@ -17,7 +17,12 @@ const app = express()
 app.set('trust proxy', 1)
 
 app.use(cors({
-  origin: 'http://localhost:4200'
+  origin: [
+    'http://localhost:4200', 
+    'https://proyect-nova.com',
+    'https://proyect-frontier.com',
+    'https://proyect-proxima.com',
+  ]
 }));
 
 app.use(globalLimiter)

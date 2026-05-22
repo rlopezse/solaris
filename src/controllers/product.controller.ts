@@ -5,7 +5,9 @@ export const productController = {
   getAll: async (_req: Request, res: Response) => {
     try {
       const products = await productService.getAll()
-      res.header('Cache-Control', 'public, max-age=604800').json({ data: products })
+      res
+        .header('Cache-Control', 'public, max-age=604800')
+        .json({ data: products })
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' })
     }

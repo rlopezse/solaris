@@ -14,7 +14,11 @@ export const productService = {
     if (cached) return JSON.parse(cached)
 
     const products = await productRepository.findAll()
-    await redis.setex(CACHE_KEYS.allProducts, CACHE_TTL, JSON.stringify(products))
+    await redis.setex(
+      CACHE_KEYS.allProducts,
+      CACHE_TTL,
+      JSON.stringify(products),
+    )
     return products
   },
 
@@ -25,7 +29,11 @@ export const productService = {
     const product = await productRepository.findById(id)
     if (!product) return null
 
-    await redis.setex(CACHE_KEYS.product(id), CACHE_TTL, JSON.stringify(product))
+    await redis.setex(
+      CACHE_KEYS.product(id),
+      CACHE_TTL,
+      JSON.stringify(product),
+    )
     return product
   },
 
