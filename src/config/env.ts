@@ -8,5 +8,5 @@ export const env = {
   redisUrl: process.env.REDIS_URL || 'redis://localhost:6379',
   jwtSecret: process.env.JWT_SECRET || 'secret',
   jwtExpiresIn: parseInt(process.env.JWT_EXPIRES_IN || '3600'),
-  corsOrigin: parseInt(process.env.CORS_ORIGIN || '3600'),
+  corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:3000',
 }
