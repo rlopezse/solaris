@@ -12,7 +12,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
-  "packageManager": "pnpm@11.2.2",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": "20.x"
   },
