@@ -12,7 +12,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.2.2",
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
