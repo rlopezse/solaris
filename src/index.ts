@@ -2,12 +2,10 @@ import './config/zod'
 import express from 'express'
 import helmet from 'helmet'
 import { env } from './config/env'
-import swaggerUi from 'swagger-ui-express'
-import { swaggerSpec } from './config/swagger'
 import authRoutes from './routes/auth.routes'
 import productRoutes from './routes/product.routes'
 import userRoutes from './routes/user.routes'
-import { authenticate } from './middlewares/auth.middleware'
+//import { authenticate } from './middlewares/auth.middleware'
 import compression from 'compression'
 import { globalLimiter, authLimiter } from './middlewares/rate-limit.middleware'
 import cors from 'cors'
@@ -34,14 +32,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(helmet())
 app.use(compression())
 
-// Swagger
-app.use(
-  '/api/docs',
-  helmet({ contentSecurityPolicy: false }),
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerSpec),
-)
-
 // Public routes
 app.use('/api/auth', authLimiter, authRoutes)
 
@@ -57,7 +47,8 @@ app.get('/health', (_req, res) => {
 
 // Protected routes
 app.use('/api/products', productRoutes)
-app.use('/api/users', authenticate, userRoutes)
+
+app.use('/api/users', userRoutes)
 
 app.listen(env.port, () => {
   console.log(`🚀 Server running on port ${env.port}`)
