@@ -1,7 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
       "sku": "6802305694",
       "title": "iPhone 15 Pro Max",
       "description": "Top Apple flagship",
@@ -12,7 +11,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 2,
       "sku": "6673339691",
       "title": "iPhone 15 Pro",
       "description": "Powerful compact phone",
@@ -23,7 +21,6 @@
       "isFreeShipping": false
     },
     {
-      "id": 3,
       "sku": "5399237704",
       "title": "iPhone 15",
       "description": "Balanced performance",
@@ -34,7 +31,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 4,
       "sku": "0007382621",
       "title": "iPhone 14 Pro",
       "description": "Previous gen premium",
@@ -45,7 +41,6 @@
       "isFreeShipping": false
     },
     {
-      "id": 5,
       "sku": "4711209091",
       "title": "iPhone SE 3",
       "description": "Small and fast",
@@ -56,7 +51,6 @@
       "isFreeShipping": false
     },
     {
-      "id": 6,
       "sku": "4656901554",
       "title": "Galaxy S24 Ultra",
       "description": "Ultra performance",
@@ -67,7 +61,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 7,
       "sku": "3885045739",
       "title": "Galaxy S24",
       "description": "Premium balance",
@@ -78,7 +71,6 @@
       "isFreeShipping": false
     },
     {
-      "id": 8,
       "sku": "6220507977",
       "title": "Galaxy Z Flip5",
       "description": "Modern foldable",
@@ -89,7 +81,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 9,
       "sku": "0460108064",
       "title": "Xiaomi 14",
       "description": "Xiaomi flagship",
@@ -100,7 +91,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 10,
       "sku": "5461522547",
       "title": "Redmi Note 13 Pro",
       "description": "Great value phone",
@@ -111,7 +101,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 11,
       "sku": "8435538295",
       "title": "Xiaomi 13T",
       "description": "Strong camera",
@@ -122,7 +111,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 12,
       "sku": "6251140018",
       "title": "Vivo X100 Pro",
       "description": "Advanced photography",
@@ -133,7 +121,6 @@
       "isFreeShipping": false
     },
     {
-      "id": 13,
       "sku": "7648615307",
       "title": "Vivo V30",
       "description": "Elegant design",
@@ -144,7 +131,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 14,
       "sku": "5641464151",
       "title": "Vivo Y100",
       "description": "Solid midrange",
@@ -155,7 +141,6 @@
       "isFreeShipping": true
     },
     {
-      "id": 15,
       "sku": "1169609438",
       "title": "Huawei P60 Pro",
       "description": "Premium camera",
