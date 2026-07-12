@@ -12,6 +12,12 @@ export const userRepository = {
       where: { id },
     })
   },
+  
+  findByGoogleId: async (googleId: string) => {
+    return prisma.user.findUnique({
+      where: { googleId },
+    })
+  },
 
   findByEmail: async (email: string) => {
     return prisma.user.findUnique({
@@ -19,7 +25,7 @@ export const userRepository = {
     })
   },
 
-  create: async (data: { email: string; password: string; name: string }) => {
+  create: async (data: { email: string; password: string | null; name: string , googleId: string | null}) => {
     return prisma.user.create({ data })
   },
 

@@ -25,4 +25,16 @@ export const authController = {
       res.status(500).json({ error: 'Internal server error' })
     }
   },
+  
+  loginGoogle: async (req: Request, res: Response) => {
+    try {
+      const result = await authService.loginGoogle(req.body)
+      res.json({ data: result })
+    } catch (error: any) {
+      if (error.message === 'Invalid credentials') {
+        return res.status(401).json({ error: error.message })
+      }
+      res.status(500).json({ error: 'Internal server error' })
+    }
+  }
 }

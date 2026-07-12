@@ -28,7 +28,7 @@ export const userService = {
     return user
   },
 
-  create: async (data: { email: string; password: string; name: string }) => {
+  create: async (data: { email: string; password: string | null; name: string, googleId: string | null }) => {
     const exists = await userRepository.findByEmail(data.email)
     if (exists) throw new Error('Email already in use')
 
