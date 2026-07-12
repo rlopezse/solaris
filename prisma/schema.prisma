@@ -4,16 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
-}
-
-model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  password String
-  name String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  url      = env("DATABASE_URL")
 }
 
 model Product {
@@ -23,9 +14,24 @@ model Product {
   description    String?
   category       String
   price          Float
-  currencyFormat String   @default("$")
-  currencyId     String   @default("CLP")
-  isFreeShipping Boolean  @default(false)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  currencyFormat String   @default("$") @map("currency_format")
+  currencyId     String   @default("CLP") @map("currency_id")
+  isFreeShipping Boolean  @default(false) @map("is_free_shipping")
+
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("products")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  googleId  String?  @unique @map("google_id")
+  email     String   @unique
+  password  String?
+  name      String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
 }

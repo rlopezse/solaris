@@ -9,7 +9,7 @@ async function main() {
     data: productsJson.products,
     skipDuplicates: true,
   })
-  console.log('ok')
+  console.log(`✅ ${productsJson.products.length} productos insertados`);
 }
 
 main()
